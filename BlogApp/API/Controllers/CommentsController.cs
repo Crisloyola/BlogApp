@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-using System.Threading.Tasks;
 using BlogApp.Application.DTOs.Comment;
 using BlogApp.Application.Interfaces;
 using BlogApp.Domain.Exceptions;

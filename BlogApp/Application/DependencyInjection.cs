@@ -16,6 +16,7 @@ namespace BlogApp.Application
             services.AddScoped<IAuthorService, AuthorService>();
             services.AddScoped<IPostService, PostService>();
             services.AddScoped<ICommentService, CommentService>();
+            services.AddScoped<IAuthService, AuthService>();
 
             services.AddValidatorsFromAssemblyContaining<CreatePostDtoValidator>();
             services.AddValidatorsFromAssemblyContaining<CreateAuthorDtoValidator>();

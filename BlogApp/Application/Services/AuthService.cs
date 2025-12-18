@@ -24,7 +24,7 @@ namespace BlogApp.Application.Services
             _logger = logger;
         }
 
-        public async Task<AuthResponseDto> ResgiterAsync(RegisterDto dto)
+        public async Task<AuthResponseDto> RegisterAsync(RegisterDto dto)
         {
             _logger.LogInformation("Registering new user with email: {Email}", dto.Email);
             var existingUser = await _unitOfWork.Users.GetByEmailAsync(dto.Email);
@@ -85,9 +85,27 @@ namespace BlogApp.Application.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
-        public Task<AuthResponseDto> LoginAsync(LoginDto loginDto)
+        public async Task<AuthResponseDto> LoginAsync(LoginDto dto)
         {
-            throw new NotImplementedException();
+            _logger.LogInformation("Logging in user with email: {Email}", dto.Email);
+            var user = await _unitOfWork.Users.GetByEmailAsync(dto.Email);
+            if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
+            {
+                _logger.LogWarning("Login failed for email: {Email}", dto.Email);
+                throw new Exception("Invalid email or password.");
+            }
+
+            var token = GenerateJwtToken(user);
+
+            return new AuthResponseDto
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Role = user.Role,
+                Token = token
+            };
         }
     }
 

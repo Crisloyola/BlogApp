@@ -9,7 +9,7 @@ namespace BlogApp.Infrastructure.Persistence.Context
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
 
-            var connectionString = "Server=localhost;Port=3306;Database=blogapp_db;User=root;Password=root;";
+            var connectionString = "Server=localhost;Port=3306;Database=blogapp_db;User=root;Password=58672410;";
 
             optionsBuilder.UseMySql(
                 connectionString,

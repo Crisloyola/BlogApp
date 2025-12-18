@@ -21,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Configurar CORS
 
 var allowOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>()
- ?? new[] { "http://localhost:5173" }; // Valor por defecto si no se encuentra en la configuración
+ ?? new[] { "http://localhost:5173" }; // Valor por defecto si no se encuentra en la configuraciï¿½n
 
 builder.Services.AddCors(options =>
 {
