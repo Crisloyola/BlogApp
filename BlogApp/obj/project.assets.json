@@ -8990,19 +8990,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\loyol\\.nuget\\packages\\": {}
+    "/home/cristopher/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\loyol\\OneDrive\\Escritorio\\BlogApp\\BlogApp\\BlogApp.csproj",
+      "projectUniqueName": "/home/cristopher/Escritorio/BlogApp/BlogApp/BlogApp.csproj",
       "projectName": "BlogApp",
-      "projectPath": "C:\\Users\\loyol\\OneDrive\\Escritorio\\BlogApp\\BlogApp\\BlogApp.csproj",
-      "packagesPath": "C:\\Users\\loyol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\loyol\\OneDrive\\Escritorio\\BlogApp\\BlogApp\\obj\\",
+      "projectPath": "/home/cristopher/Escritorio/BlogApp/BlogApp/BlogApp.csproj",
+      "packagesPath": "/home/cristopher/.nuget/packages/",
+      "outputPath": "/home/cristopher/Escritorio/BlogApp/BlogApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\loyol\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/cristopher/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -9020,11 +9020,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -9099,7 +9094,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.122/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

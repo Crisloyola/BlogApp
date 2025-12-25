@@ -10,12 +10,11 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
-        // 🔹 Variables de entorno (NOMBRES CORRECTOS)
-        var host = Environment.GetEnvironmentVariable("DB_HOST");
-        var port = Environment.GetEnvironmentVariable("DB_PORT");
-        var database = Environment.GetEnvironmentVariable("DB_NAME");
-        var user = Environment.GetEnvironmentVariable("DB_USER");
-        var password = Environment.GetEnvironmentVariable("DB_PASSWORD");
+            var host = Environment.GetEnvironmentVariable("DB_HOST") ?? "localhost";
+            var port = Environment.GetEnvironmentVariable("DB_PORT") ?? "3306";
+            var database = Environment.GetEnvironmentVariable("DB_NAME") ?? "blogapp_db";
+            var user = Environment.GetEnvironmentVariable("DB_USER") ?? "root";
+            var password = Environment.GetEnvironmentVariable("DB_PASSWORD") ?? string.Empty;
 
         // 🔹 Validación (muy recomendada)
         if (string.IsNullOrWhiteSpace(host))
