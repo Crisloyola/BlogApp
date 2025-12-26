@@ -64,20 +64,10 @@ public class AuthorsController : ControllerBase
     [HttpPut("{id}")]
     public async Task<ActionResult<AuthorDto>> Update(int id, [FromBody] UpdateAuthorDto dto)
     {
-        try
-        {
-            var author = await _authorService.UpdateAsync(id, dto);
-            return Ok(author);
-        }
-        catch (NotFoundException ex)
-        {
-            return NotFound(new { message = ex.Message });
-        }
-        catch (DuplicateEntityException ex)
-        {
-            return Conflict(new { message = ex.Message });
-        }
+        var author = await _authorService.UpdateAsync(id, dto);
+        return Ok(author);
     }
+        
 
     [HttpDelete("{id}")]
     public async Task<ActionResult> Delete(int id)

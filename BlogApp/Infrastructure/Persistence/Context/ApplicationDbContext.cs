@@ -26,6 +26,15 @@ namespace BlogApp.Infrastructure.Persistence.Context
             modelBuilder.ApplyConfiguration(new PostConfiguration());
             modelBuilder.ApplyConfiguration(new CommentConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.Author)
+                .WithOne(a => a.User)
+                .HasForeignKey<Author>(a => a.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            base.OnModelCreating(modelBuilder);
         }
+
     }
 }
